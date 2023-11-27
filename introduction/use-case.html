@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getnelson.io/favicon.ico?" type="image/x-icon">
+
+    <meta name="generator" content="Hugo 0.48" />
+
+    <title>Nelson – Cloud-native container deployment</title>
+
+    <link href="https://getnelson.io/css/material.min.css?028da1665e1fbd8cbad5130decd081d4" rel="stylesheet">
+    
+    <link href="https://getnelson.io/css/nelson.css?cf10d66c2426f009bd642a17009a0a86" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:300,600|Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+
+  <body>
+    
+    
+<nav class="navbar navbar-expand-sm navbar-light bg-blue-5">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="/img/nelson-without-background.svg?sanitize=true" width="30" height="30" class="d-inline-block align-top" alt="" />
+      &nbsp;
+      Nelson
+    </a>
+    <ul class="navbar-nav mr-auto">
+      
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="/introduction/">Introduction</a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="/getting-started/">Getting Started</a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="/documentation/">Documentation</a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="https://github.com/getnelson/nelson">Code</a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="/api/">API</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+    
+
+    <main role="main">
+
+      <div class="container primary">
+        <div class="row">
+          <aside class="col-md-3">
+  <ol>
+    
+    
+        
+            <li class="active">
+              <a href="/introduction/" class="">Introduction</span></a>
+              <ol class="sub-menu">
+                  
+                      <li class="highlight">
+                          <a href="/introduction/use-case.html">Use Cases</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/introduction/architecture.html">Architecture</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/introduction/competitors.html">Competitors</a>
+                      </li>
+                  
+              </ol>
+            </li>
+        
+    
+        
+            <li class="">
+              <a href="/getting-started/index.html" class="">Getting Started</span></a>
+              <ol class="sub-menu">
+                  
+                      <li class="">
+                          <a href="/getting-started/install.html">Install</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/first-use.html">First Use</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/deployables.html">Deployables</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/blueprints.html">Blueprints</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/lifecycle.html">Lifecycle</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/routing.html">Routing</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/getting-started/next.html">Further Reading</a>
+                      </li>
+                  
+              </ol>
+            </li>
+        
+    
+        
+            <li class="">
+              <a href="/documentation/" class="">Documentation</span></a>
+              <ol class="sub-menu">
+                  
+                      <li class="">
+                          <a href="/documentation/cli.html">Command Line</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/configuration.html">Configuration</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/manifest.html">Manifest Settings</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/blueprints.html">Blueprint Settings</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/operator.html">Operator Guide</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/api.html">REST API</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/contributing.html">Contributing</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="/documentation/credits.html">Credits</a>
+                      </li>
+                  
+              </ol>
+            </li>
+        
+    
+</ol>
+</aside>
+
+          <article class="col-md-9">
+            <h1>Use Cases</h1>
+
+            
+            <p>Nelson is designed to handle a specific set of use-cases; comprehending these use-cases will allow you to understand if Nelson is a good fit for the challenges you are looking to solve.</p>
+            
+
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#dependency-graph">Dependency Graph</a></li>
+<li><a href="#policy-management">Policy Management</a></li>
+<li><a href="#unopinionated-ci">Unopinionated CI</a></li>
+</ul></li>
+</ul>
+</nav>
+
+            <hr />
+
+            
+
+<h2 id="deployment">Deployment</h2>
+
+<p>At its core, Nelson is a system that deploys containers to schedulers like Kubernetes and Nomad. This alone however does not make Nelson unique: those tools provide a means to deploy containers in a myriad of different ways, and therein lies the source of a great deal of friction. Scheduler interfaces expose a discrete set of trade-offs to the user, and more often than not they make hard things easier, but easy things hard. This is typically not what most organizations are looking for: easy things should be easy. Nelson provides users a simple interface to deploy the What, Where and How of their deployment.</p>
+
+<h2 id="dependency-graph">Dependency Graph</h2>
+
+<p>Topographical security auditing: can answer questions like “show me all the systems available at the edge”, or “show me all systems that use system X”. Every action conducted against Nelson is also stored in an audit trail, so you always know what user did what action, even if that user is Nelson itself (for example, why did Nelson destroy system X).</p>
+
+<h2 id="policy-management">Policy Management</h2>
+
+<p>Automatic policy management with Vault. When you launch something onto a cluster, there is nearly always the problem of policy management and a process flow (often manual) that involves security to sign off and approval for systems accessing certain credentials. Nelson automates this workflow by generating and deploying policies on a per-stack basis. This makes it easy to reason about orphan policies (they don&rsquo;t exist because Nelson cleans them up).</p>
+
+<h2 id="unopinionated-ci">Unopinionated CI</h2>
+
+<p>Nelson does not put any constraints on the CI system you choose to use. Jenkins, Travis, etc&hellip; use whatever you want! This is a crucial design choice as it means that Nelson is not trying to own other parts of your system, making it easier to integrate into multi-team, multi-CI workflows.</p>
+
+          </article>
+
+        </div>
+      </div>
+
+    </main>
+
+    
+<div class="jumbotron bg-dark">
+  <footer class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <p>
+          Built with &hearts; by the Nelson engineering team.
+        </p>
+        <p>
+          Currently v
+                    0.16.185
+                  
+          &middot; <a href="https://github.com/getnelson/nelson">GitHub</a>
+          &middot; <a href="https://github.com/getnelson/nelson/issues">Issues</a>
+          &middot; <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a>
+          &middot; <script type="text/javascript" src="/js/contact.js"></script>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57263411-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-57263411-7');
+</script>
+<script src="/js/material.min.js?89295c21ebff7d092afb41b09ee237e5"></script>
+
+<script src="/js/nelson.js?155a29f923af0b16a81d4a67f26a29f4"></script>
+
+
+  </body>
+</html>
